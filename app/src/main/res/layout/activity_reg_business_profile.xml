@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@android:color/white">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Business Profile"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:padding="20dp"
+                android:layout_marginTop="35dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="32dp"
+                android:gravity="center" />
+
+            <!-- Registered Email EditText -->
+            <EditText
+                android:id="@+id/editTextRegisteredEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Registered Email"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textColorHint="@color/gray"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:drawableLeft="@drawable/ic_baseline_email_24" />
+
+            <!-- Business Name EditText -->
+            <EditText
+                android:id="@+id/editTextBusinessName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Business Name"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColorHint="@color/gray"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:drawableLeft="@drawable/baseline_add_business_24" />
+
+            <!-- Business Address EditText -->
+            <EditText
+                android:id="@+id/editTextBusinessAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Business Address"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColorHint="@color/gray"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:drawableLeft="@drawable/baseline_location_on_24" />
+
+            <!-- Business Contact EditText -->
+            <EditText
+                android:id="@+id/editTextBusinessContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact Number"
+                android:inputType="phone"
+                android:padding="16dp"
+                android:textColorHint="@color/gray"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:drawableLeft="@drawable/baseline_local_phone_24" />
+
+            <!-- Business Description EditText -->
+            <EditText
+                android:id="@+id/editTextBusinessDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Business Description"
+                android:inputType="textMultiLine"
+                android:textAlignment="center"
+                android:padding="16dp"
+                android:textColorHint="@color/gray"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:lines="4"
+                android:maxLines="4"
+                android:scrollbars="vertical"
+                android:drawableTop="@drawable/baseline_description_24" />
+
+            <!-- Register Button -->
+            <Button
+                android:id="@+id/buttonRegisterBusiness"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Register Business"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center" />
+
+            <!-- Terms and Conditions Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By registering, you agree to our Terms and Conditions."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:gravity="bottom"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

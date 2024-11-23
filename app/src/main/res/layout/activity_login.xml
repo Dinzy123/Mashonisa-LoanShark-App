@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@android:color/white"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/loanimage2"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Logo and Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MashonisaManager"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#6200EE"
+        android:paddingStart="8dp"
+        android:gravity="center"/>
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage your loans with ease"
+        android:textSize="16sp"
+        android:textColor="#808080"
+        android:paddingTop="8dp"
+        android:gravity="center"/>
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/log_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:backgroundTint="#F0F0F0"
+        android:padding="12dp"
+        android:textColorHint="#808080"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/log_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:backgroundTint="#F0F0F0"
+        android:padding="12dp"
+        android:textColorHint="#808080"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#9400D3"
+        android:layout_marginTop="24dp"
+        android:padding="12dp"/>
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#9400D3"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"/>
+
+    <!-- Google Sign-In Button -->
+    <ImageView
+        android:id="@+id/btn_google_signup"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:src="@drawable/social"
+        android:contentDescription="Sign Up with Google"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <!-- Google Profile Image -->
+    <ImageView
+        android:id="@+id/google_profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/sn_loginlink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textSize="16sp"
+        android:textColor="#6200EE"
+        android:paddingTop="16dp"
+        android:gravity="center"
+        android:clickable="true" />
+
+
+</LinearLayout>

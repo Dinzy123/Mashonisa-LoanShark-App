@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "878019943914",
+    "project_id": "mashonisastorage",
+    "storage_bucket": "mashonisastorage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878019943914:android:fc3d3a8f2fa641990d2693",
+        "android_client_info": {
+          "package_name": "com.example.mashonisaloanshark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878019943914-ene1k7l4l95ri2e7u9is0l08ndtsnrsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3AKB3r_whWd5kHe2FfiRdBnj0Dqjr-xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878019943914-ene1k7l4l95ri2e7u9is0l08ndtsnrsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

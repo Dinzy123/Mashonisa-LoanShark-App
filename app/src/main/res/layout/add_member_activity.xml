@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Fields for member information (e.g., name, loan amount) -->
+    <EditText
+        android:id="@+id/memberNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Member Name"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/loanAmountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Loan Amount"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/memberNameEditText"
+        android:layout_marginTop="12dp" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitMemberButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/loanAmountEditText"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#9C27B0"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

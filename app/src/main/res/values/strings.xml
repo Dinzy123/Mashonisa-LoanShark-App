@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mashonisa</string>
+
+    <string-array name="loan_categories">
+        <item>Home Loan</item>
+        <item>Car Loan</item>
+        <item>Personal Loan</item>
+        <item>Education Loan</item>
+    </string-array>
+
+</resources>

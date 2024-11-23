@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700b3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="gray">#C3C3C5</color>
+    <color name="blue">#CDCDFF</color>
+    <color name="New">#0B0BBF</color>
+    <color name="Color">#070707</color>
+    <color name="lavender">#8692f7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#070707</color>
+    <color name="custom">#061045</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="first_main">#BBC7C1</color>
+    <color name="red">#DF0909</color>
+
+    <color name="colorPrimary2">#003366</color> <!-- Deep Blue -->
+    <color name="colorAccent2">#4CAF50</color> <!-- Green -->
+    <color name="colorSecondary">#666666</color> <!-- Dark Gray -->
+    <color name="colorText">#333333</color> <!-- Almost Black -->
+    <color name="background_color2">#F5F5F5</color> <!-- Light Gray -->
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <!--    <color name="black">#FF000000</color>-->
+    <!--    <color name="white">#FFFFFFFF</color>-->
+    <!--    <color name="lavender">#8692f7</color>-->
+    <color name="grey">#ff424242</color>
+
+    <color name="colorPrimary3">#6200EE</color>
+    <color name="colorPrimaryDark4">#3700B3</color>
+    <color name="colorAccent5">#03DAC5</color>
+
+    <color name="interest_rate_10">#4CAF50</color>
+    <color name="interest_rate_15">#FF9800</color>
+    <color name="interest_rate_20">#F44336</color>
+    <color name="interest_rate_25">#3F51B5</color>
+
+    <color name="formAccent">#FF6F61</color>
+    <color name="formBackground">#FFFFFF</color>
+    <color name="formTextColor">#333333</color>
+    <color name="formHintColor">#888888</color>
+    <color name="formBorderColor">#DDDDDD</color>
+
+</resources>

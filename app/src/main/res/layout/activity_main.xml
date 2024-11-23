@@ -1,0 +1,164 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:spacing="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI-Generated Form"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp"
+            android:textColor="@android:color/black"/>
+
+        <!-- Borrower Name -->
+        <EditText
+            android:id="@+id/etBorrowerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Borrower's Full Name"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Borrower's Gender -->
+        <EditText
+            android:id="@+id/etGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Borrower's Gender"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Loan Start Date -->
+        <EditText
+            android:id="@+id/etLoanStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="mm/dd/yyyy"
+            android:focusable="false"
+            android:inputType="date"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Borrower's Phone Number -->
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Borrower's Phone Number"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Loan Amount -->
+        <EditText
+            android:id="@+id/etLoanAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loan Amount"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Loan Purpose -->
+        <EditText
+            android:id="@+id/etLoanPurpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loan Purpose"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Borrower Type -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbIndividual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Individual" />
+
+            <RadioButton
+                android:id="@+id/rbBusiness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Business" />
+        </RadioGroup>
+
+        <!-- Loan Duration -->
+        <EditText
+            android:id="@+id/etLoanDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loan Duration (e.g., 6 months)"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Choose Loan Plan -->
+        <EditText
+            android:id="@+id/etLoanPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Choose Loan Plan"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/edittext_bg"/>
+
+        <!-- Loan Category -->
+        <Spinner
+            android:id="@+id/spinnerLoanCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/spinner_bg"/>
+
+        <!-- Upload Borrower's ID -->
+        <Button
+            android:id="@+id/btnUploadID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose File"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Agree to Terms -->
+        <CheckBox
+            android:id="@+id/cbAgreeTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agree to Terms and Conditions"
+            android:textColor="@android:color/black"
+            android:paddingTop="12dp"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>
