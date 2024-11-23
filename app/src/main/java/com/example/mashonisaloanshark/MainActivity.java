@@ -1,21 +1,17 @@
 package com.example.mashonisaloanshark;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.Button;
-import android.widget.CheckBox;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     // UI elements
     private EditText etBorrowerName, etGender, etLoanStartDate, etPhoneNumber, etLoanAmount,
-            etLoanPurpose, etLoanDuration, etLoanPlan;
+            etLoanPurpose, etLoanDuration;
     private Spinner spinnerLoanCategory;
     private RadioGroup rgBorrowerType;
     private CheckBox cbAgreeTerms;
@@ -48,23 +44,42 @@ public class MainActivity extends AppCompatActivity {
         etLoanAmount = findViewById(R.id.etLoanAmount);
         etLoanPurpose = findViewById(R.id.etLoanPurpose);
         etLoanDuration = findViewById(R.id.etLoanDuration);
-        etLoanPlan = findViewById(R.id.etLoanPlan);
         spinnerLoanCategory = findViewById(R.id.spinnerLoanCategory);
-       // rgBorrowerType = findViewById(R.id.rgBorrowerType);
+        rgBorrowerType = findViewById(R.id.rgBorrowerType);
         cbAgreeTerms = findViewById(R.id.cbAgreeTerms);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        // Set submit button onClick listener
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveLoanApplication();
-            }
-        });
+        // Populate spinner with loan categories
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.loan_categories, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLoanCategory.setAdapter(adapter);
+
+        // Set up date picker for loan start date
+        etLoanStartDate.setOnClickListener(v -> showDatePickerDialog());
+
+        // Submit button listener
+        btnSubmit.setOnClickListener(v -> saveLoanApplication());
+    }
+
+    private void showDatePickerDialog() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                (view, year1, month1, dayOfMonth) -> {
+                    String date = (month1 + 1) + "/" + dayOfMonth + "/" + year1;
+                    etLoanStartDate.setText(date);
+                },
+                year, month, day);
+        datePickerDialog.show();
     }
 
     private void saveLoanApplication() {
-        // Get the current logged-in user ID
+        // Check if the user is authenticated
         if (mAuth.getCurrentUser() == null) {
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
             return;
@@ -72,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         String userId = mAuth.getCurrentUser().getUid();
 
-        // Get all form input values
+        // Retrieve form input values
         String borrowerName = etBorrowerName.getText().toString().trim();
         String gender = etGender.getText().toString().trim();
         String loanStartDate = etLoanStartDate.getText().toString().trim();
@@ -80,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
         String loanAmount = etLoanAmount.getText().toString().trim();
         String loanPurpose = etLoanPurpose.getText().toString().trim();
         String loanDuration = etLoanDuration.getText().toString().trim();
-        String loanPlan = etLoanPlan.getText().toString().trim();
         String loanCategory = spinnerLoanCategory.getSelectedItem().toString();
 
         int selectedBorrowerTypeId = rgBorrowerType.getCheckedRadioButtonId();
@@ -91,18 +105,19 @@ public class MainActivity extends AppCompatActivity {
 
         // Validate required fields
         if (borrowerName.isEmpty() || loanAmount.isEmpty() || loanPurpose.isEmpty() || !agreeToTerms) {
-            Toast.makeText(this, "Please fill all required fields and agree to terms", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Fill all required fields and agree to terms", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Create a LoanApplication object
+        // Create LoanApplication object
         LoanApplication loanApplication = new LoanApplication(
                 borrowerName, gender, loanStartDate, phoneNumber, loanAmount, loanPurpose,
-                loanDuration, loanPlan, loanCategory, borrowerType, agreeToTerms
+                loanDuration, loanCategory, borrowerType, agreeToTerms
         );
 
-        // Save data to Firebase Database under the logged-in user
-        mDatabase.child("users").child(userId).child("loanApplications").push().setValue(loanApplication)
+        // Save data to Firebase
+        mDatabase.child("users").child(userId).child("loanApplications").push()
+                .setValue(loanApplication)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Loan application submitted successfully!", Toast.LENGTH_SHORT).show();
@@ -111,4 +126,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
